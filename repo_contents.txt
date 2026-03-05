@@ -1,0 +1,5021 @@
+
+================================================================================
+FILE: .\1-declarar_variables.html
+================================================================================
+<!--
+
+    Nombre del programa archivo: 1-declarar_variables.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha: 01/06/2022
+	Versión: 1.0
+	Descripción: En este documento se analizarán  las diferentes entre las formas de declarar variables en JavaScript
+    con: let, var y const. 
+
+-->
+	 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declarar variables (var, let, const)</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    /*
+        Notas sobre el lenguaje JS. 
+
+            1-No toma en cuenta la sangría, saltos de línea 
+            o espacios en blanco, el intérprete lo ignorará. 
+
+            2-Es sensitive case. 
+
+            3-No es un lenguaje tipado. 
+
+            4-No es obligatorio poner el terminador de sentencias ';', pero se recomienda, como buena práctica.
+
+            5-Es server-side, por lo que: 
+                -No permite la escritura en archivos del servidor. 
+                -No puede leer información de otras páginas web abiertas.
+                -No puede cerrar otras páginas que el no abrió.
+    */
+
+
+//Definición de funciones para imprimir en HTML. 
+   
+   /*
+        Nombre de función: imprimirTitulo
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué 
+        Fecha: 01/06/2022
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el título en html. 
+        Descripción: Imprimira en html un título con el formato h1. 
+   */
+
+  function imprimirTitulo(mensaje){
+       
+       document.write("<h1><b>" + mensaje + "</b></h1>"); 
+       document.write("\n"); 
+       
+    }
+    
+    /*
+    Nombre de la función: imprimirContenido. 
+    Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 01/06/2022
+        Versión: 1.0
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el contenido
+        Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+        
+        document.write("<h3>" + mensaje + "</h3>"); 
+    }
+        
+
+    
+
+    /*
+        Nombre de función: imprimirNotas
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 03/06/2022
+        Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+    */
+   
+    function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+    }
+        
+
+
+
+// var, let y const. 
+
+    imprimirTitulo("Declarar variables (var, let, const)")
+    
+    /*  
+    var 
+            Mutable: Si. 
+            Palabra resevada: var. 
+            Se debe inicializar: Es opcional. 
+            Valor default: undefined. 
+            Múltiples variables con el mismo nombre(redefinir): Si. 
+            Hoisting: Si (aplica también para funciones declaradas con var), el concepto hoisting se analizará más adelante.
+            Scope: Es visible  dentro y fuera  de los code blocks { }, es decir que es una variable global.
+            Nota: Las siguientes formas para declarar variables son equivalentes. 
+                var x = 0 
+                x=0
+    */
+
+    imprimirTitulo("var"); 
+    var saludo = "Hola estoy utilizando var en esta variable. :D"
+    imprimirContenido(saludo); 
+    imprimirNotas("Nota: permite múltiples variables con el mismo nombre, el default es undefined, tiene hoisting y es visible dentro<br>"); 
+    imprimirNotas("y fuera de los code blocks."); 
+
+    /*
+        let 
+            Mutable: Si. 
+            Palabra resevada: let. 
+            Se debe inicializar:Es opcional. 
+            Valor default: no se asigna default. 
+            Múltiples variables con el mismo nombre (redefinir): No.
+            Hoisting: No. 
+            Scope: Únicamente dentro de los code blocks { }.
+            Nota: Se recomiendo utilizar let debido a que no permite redefinir una variable ya existente.
+     */
+
+     let segundoSaludo = "Hola ¿Cómo estas? esta es una variable con <bold>let</b>. :D"
+     imprimirTitulo("let"); 
+     imprimirContenido(segundoSaludo); 
+     imprimirNotas("Nota: Se debe inicializar, no tiene hoisting, no se puede re definir y es visible únicamente dentro de los code blocks."); 
+    
+      /*
+        const
+            Mutable: No. 
+            Palabra resevada: const. 
+            Se debe inicializar: Si. 
+            Valor sefault: error (no se asigna default). 
+            Múltiples variables con el mismo nombre(redefinir): No. 
+            Hoisting: No. 
+            Scope: Únicamente dentro de los code blocks { }. 
+      */    
+     
+      imprimirTitulo("const");
+      const PI = 3.1416
+      imprimirContenido("Hola estoy utilizando const para la constante PI=" + PI);  
+      imprimirNotas("Nota: Se utiliza para declarar constantes.");
+        
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/var
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/let
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/const
+
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+   
+ 
+</script>
+================================================================================
+FILE: .\2-tipos_de_datos.html
+================================================================================
+<!--
+
+    Nombre del programa archivo: 2-tipos_de_datos.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha: 01/06/202
+	Versión: 1.0
+	Descripción: En este documento se analizarán los diferentes tipos de datos  no primitivos (arrays,objetos)
+    y primitivos(null, undefined, symbol,  string, number, boolean). 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta nombre="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de datos</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+    //Definición de funciones para escribir en HTML.
+
+    /*
+         Nombre de función: imprimirTitulo
+         Copyright: FAHJ
+         Autor: Francisco Arellano Herdson Josué 
+         Fecha: 01/06/2022
+         Parámetros: 
+             por valor: 
+                 mensaje: Es un string pasado por valor para imprimir el título en html. 
+         Descripción: Imprimira en html un título con el formato h1. 
+    */
+
+    function imprimirTitulo(mensaje) {
+
+        document.write("<h1>" + mensaje + "</h1>");
+        document.write("<br>");
+
+    }
+
+    /*
+         Nombre de la función: imprimirContenido. 
+         Copyright: FAHJ
+         Autor: Francisco Arellano Herdson Josué
+         Fecha: 01/06/2022
+         Versión: 1.0
+         Parámetros: 
+             por valor: 
+                 mensaje: Es un string pasado por valor para imprimir el contenido
+         Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje) {
+
+        document.write("<h3>" + mensaje + "</h3>");
+
+    }
+
+    /*
+       Nombre de función: imprimirNotas
+       Copyright: FAHJ
+       Autor: Francisco Arellano Herdson Josué
+       Fecha: 03/06/2022
+       Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+       Parámetros: 
+           por valor: 
+               mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+   */
+
+    function imprimirNotas(mensaje) {
+
+        document.write("<h4>" + mensaje + "</h4>");
+
+    }
+
+
+
+//Tipos de datos (primitivos y no primitivos)
+    
+
+    imprimirTitulo("Tipos de datos");
+
+//Primitivos
+/*ECMA  Script (estándar) define 7 tipos de datos: */
+    
+    
+    let variableSymbol = Symbol('Hola'); //   1-Symbol
+    let variableNULL = null; //  2-null
+    let variableUndefined=undefined; // 3-Undifined
+    let variableBooleana = false; //  4-Boolen
+    let variableString = 'Pedro'; // 5-String
+    let variableNumero = 10;// 6-Number
+    // 7-Object->Se analizará más adelante en este mismo archivo.
+
+    imprimirTitulo("Datos primitivos");
+    imprimirContenido("Variable Symbol (Symbol()): " + String(variableSymbol));
+    imprimirContenido("Variable NULL (null): " + variableNULL);
+    imprimirContenido("Variable undefined (undefined): " + variableUndefined);
+    imprimirContenido("Variable booleana (Boolean): " + variableBooleana);
+    imprimirContenido('Variable string (String ""): ' + variableString);
+    //Number: Podemos utilizar bigint y notación científica. 
+    imprimirContenido("Variable numérica (Number): " + variableNumero);
+    //Symbol: Valores únicos e inmutables
+    //Tiene asociado un valor tipo estring o undefined que sirve como descripción del símbolo.
+
+
+// No primitivos  
+    //Arreglos   (Es un objeto)  
+    //Arreglo sencillo con diferentes tipos de datos.
+     
+    imprimirTitulo("Datos no primitivos");
+    imprimirTitulo("Arreglos [ ]");
+    var arregloMixto = [1, null,false , ":D", undefined, "Hola", 12E10, 111_111_111];
+    imprimirContenido("Arreglo sencillo con diferentes tipos de dato [ ] : " + arregloMixto);
+
+    imprimirContenido("<br></br>"); 
+    //Arreglo llave->valor sencillo   arregloClaveValor =  { 1:2,   }
+    //Nota: Las claves y los valores pueden ser 
+    var arregloClaveValor = { primerId: 100, segundoId: 200, "tercerID": 'Hola', 1:2};
+    imprimirContenido("Arreglo clave:valor {clave1 :valor1, clave2 :valor2, ... claveN:valorN}   :  ");
+    for (var i in arregloClaveValor) {
+        imprimirContenido(" " + arregloClaveValor[i] + " ");
+    }
+    
+    
+    imprimirContenido("<br></br>"); 
+    //Arreglo con clase  Array. 
+    var arregloConClase = new Array();
+    arregloConClase[1] = "Hola como estas.";
+    arregloConClase["b"] = "Bien gracias y tu?"
+    arregloConClase[2] = 3
+    arregloConClase["p"] = 56;
+    //Invalid:  arregloConClase[a] = 56;
+    imprimirContenido("Arreglo con la clase new Array(): ");
+    for (var i in arregloConClase) {
+        imprimirContenido(" " + arregloConClase[i] + " ")
+    }
+    
+    //Arreglo con clase  MAP. 
+    imprimirContenido("<br></br>"); 
+
+    var map = new Map();
+    map.set('nombre', 'Juan');
+    map.set('id', 15);
+    imprimirContenido("Arreglo con la clase new Map(): ")
+    for (let valor of map.values()) {
+        imprimirContenido(valor);
+    }
+
+    //Objetos 
+
+    imprimirTitulo("Objetos { }")
+
+    let user1 = {
+        nombre: "Rene",
+        apellido: "Gónzalez",
+        edad: 1006,
+        correo: "rene@dominio_inventado.com"
+    };
+
+    let user2 = {
+        nombre: "Mateo",
+        apellido: "Sánchez",
+        edad: 23,
+        correo: "Mateo@dominio_inventado.com"
+    };
+
+    
+
+    imprimirContenido("El atributo del objeto user1.nombre  es:  " + user1.nombre); // -> Calvin
+    imprimirContenido("El atributo del objeto user2.nombre es:  " + user2.nombre); // -> Mateus
+    imprimirContenido("El atributo del objeto  user1.edad es:   " + user1.edad); // -> 66
+    user1.edad = 67;
+    imprimirContenido("El atributo del objeto user1.edad  es:  " + user1.edad); // -> 67
+    imprimirContenido("El atributo del objeto user2.phone  es:  " + user2.phone); // -> undefined
+    user2.phone = "904-399-7557";
+    imprimirContenido("El atributo del objeto user2.phone  es:  " + user2.phone); // -> 904-399-7557
+
+
+    //Otros tipos de datos enteros. 
+    imprimirTitulo("Otros tipos de datos enteros");
+    let numeroDecimal = 10; // decimal - default 
+    let numeroHexadecimal = 0x10; // hexadecimal 
+    let numeroOctal = 0o10; // octal 
+    let numeroBinario = 0b1010011; // binary 
+    //Notación científica. 
+    let notacionPositiva= 2E10; 
+    let notacionNegativa=2E-4 ; 
+
+    imprimirContenido(" decimal - default  : " + numeroDecimal); 
+    imprimirContenido(" hexadecimal : " + numeroHexadecimal); 
+    imprimirContenido(" octal  : " + numeroOctal);
+    imprimirContenido(" binary  : " + numeroBinario);
+    imprimirContenido(" Notación científica de números grandes : " + notacionPositiva);
+    imprimirContenido(" Notación científica de números pequeños: " +notacionNegativa);
+
+    
+    imprimirTitulo("Arreglo De Objetos [ { }, { } ]");
+    let usuarios = [
+        {
+            nombre: "Eduardo",
+            apellido: "Arellano",
+            edad: 66,
+            correo: "Eduardo@teleworm.u"
+        },
+        {
+            nombre: "Mateo",
+            apellido: "Gónzalez",
+            edad: 21,
+            correo: "MateusPinto@dayrep.com"
+        }
+    ];
+
+    imprimirContenido("El contenido para el atributo usuarios[0].nombre del objeto es: " + usuarios[0].nombre); // -> Calvin
+    imprimirContenido("El contenido para el atributo usuarios[1].edad  del objeto es: " + usuarios[1].edad); // -> 21
+
+    usuarios[2] =
+    {
+        nombre: "Irene",
+        apellido: "Purnell",
+        edad: 32,
+        correo: "IreneHPurnell@rhyta.com"
+
+    }
+
+    imprimirContenido("El contenido para el atributo usuarios[0].nombre del objeto es: " + usuarios[0].nombre); // -> Calvin
+    imprimirContenido("El contenido para el atributo  usuarios[1].nombre  del objeto es: " + usuarios[1].nombre); // -> Mateus
+    imprimirContenido("El contenido para el atributo  usuarios[2].nombre  del objeto es: " + usuarios[2].nombre); // -> Irene
+
+    
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Data_structures
+
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+</script>
+
+
+================================================================================
+FILE: .\3-typeof_instanceof.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 3-typeof_instanceof.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha: 01/06/202
+	Versión: 1.0
+	Descripción: En este documento se analizará de typeof para determinar de que tipo de dato es una variable e instanceof 
+    para determinar si una variable es instancia de una determinada clase. 
+ -->
+
+
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>typeof & instanceof</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+   
+//Definición de funciones para escribir en HTML. 
+   /*
+        Nombre de función: imprimirTitulo
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué 
+        Fecha: 01/06/2022
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el título en html. 
+        Descripción: Imprimira en html un título con el formato h1. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+    }
+
+   /*
+        Nombre de la función: imprimirContenido. 
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 01/06/2022
+        Versión: 1.0
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el contenido
+        Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+
+        
+        document.write("<h3>" + mensaje + "</h3>"); 
+        
+  
+    
+    }
+
+    /*
+        Nombre de función: imprimirNotas
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 03/06/2022
+        Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+    */
+   
+    function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+    }
+
+
+//typeof & instanceof
+    imprimirTitulo("typeof & instanceof"); 
+
+    // typeof -> Devuelve un string de un tipo de dato que es una variable. 
+
+    imprimirTitulo("typeof")
+    let year = 1990;
+    imprimirContenido("Tipo de dato para (let year = 1990):  " + typeof(year)); // -> number
+    imprimirContenido("Tipo de dato para (1991) :  " + typeof 1991); // -> number
+    imprimirContenido("<br>"); 
+
+    let name = "Alice";
+    imprimirContenido("Tipo de dato para (let name = 'Alice') :" + typeof name); // -> string
+    imprimirContenido("Tipo de dato para (typeof 'Bob') :  " + typeof "Bob"); // -> string
+    imprimirContenido("<br>"); 
+    
+    let typeOfYear = typeof year;
+    imprimirContenido("Tipo de dato para (let typeOfYear = typeof year) :   " + typeOfYear); // -> number
+    //Es estring por que la variable anterior capturo "number". 
+    imprimirContenido("Tipo de dato para (typeof typeOfYear) : " + typeof typeOfYear); // -> string
+    imprimirNotas('Notas: Es estring por que la variable anterior capturo "number"'); 
+    imprimirNotas("typeof: permite determinar que tipo de dato es una variable."); 
+
+
+    //instanceof->Devuelve un booleano. 
+    imprimirTitulo("instanceof"); 
+    let dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+    let dia = "Sábado";
+
+    let  instanciaDeDias = dias instanceof Array;
+    let  instanciaDeDia= dia instanceof Array;  
+      
+    imprimirContenido('let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];')
+    imprimirContenido('let day = "Sunday";')
+    imprimirContenido("El contenido para  dia instanceof Array  es: " + instanciaDeDia); // -> false
+    imprimirContenido("El contenido para dias instanceof Array  es: " +  instanciaDeDias); // -> true
+    imprimirNotas("instanceof: permite determinar su una variable es instancia de una clase, siempre devuelve un booleano"); 
+    
+
+        
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/typeof
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/instanceof
+
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+   
+</script>
+
+================================================================================
+FILE: .\4-charAt_slice_split.html
+================================================================================
+<!-- 
+    Nombre del archivo: 4-charAt_slice_split.html 
+    Copyright:  FAHJ
+    Autor:  Francisco Arellano Herdson Josué
+    Fecha : 03/06/2022
+    Versión:  1.0
+    Descripción: En este documento se analizará como funcionan los métodos: charAt (tomar un caracter de una cadena por su posición),
+     slice(obtener partes de una cadena), split (obtener substrings de una frase). 
+
+ -->
+
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>charAt, slice, split</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones. 
+
+     /*
+        Nombre de función: imprimirTitulo
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué 
+        Fecha: 01/06/2022
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el título en html. 
+        Descripción: Imprimira en html un título con el formato h1. 
+    */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+    }
+
+   /*
+        Nombre de la función: imprimirContenido. 
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 01/06/2022
+        Versión: 1.0
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el contenido
+        Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+
+        document.write("<h3>" + mensaje + "</h3>"); 
+    
+    }
+
+     /*
+        Nombre de función: imprimirNotas
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 03/06/2022
+        Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+    */
+   
+    function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+    }
+
+
+
+//Métodos charAt, slice, split
+
+    let cadena = "Java Script Lenguaje de programación"; 
+    imprimirTitulo("Métodos charAt, slice, split"); 
+    imprimirContenido("Cadena original (let cadena = 'Java Script Language') :  " + cadena)
+    //.charAt(número)
+    imprimirTitulo(".charAt(posición)"); 
+    imprimirContenido("charAt toma un caracter de una cadena por su posición (cadena.charAt(1)) : " + cadena.charAt(1)); // -> a
+    //.slice(inicio, final)
+        //Nota: EL final es opcional, es decir, si no indicamos el final obtendremos toda
+        //la cadena desde el inicio que se marcó hasta el final. 
+    imprimirTitulo(".sliceslice(inicio, final)"); 
+    imprimirContenido("slice (corta una cadena(inicio, final)) por su posición: " + cadena.slice(0, 3));//->Jav
+    //.split(separador)
+        //Nota: es separador puede ser una coma un espacio en blanco and so on. 
+    imprimirTitulo("split('separador')"); 
+    imprimirContenido("split Crea un array con subcadenas pasandole un separador (cadena.split('' '')): " + cadena.split(" ")); //->Java,Script,Language
+    
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/slice
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/split
+
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+   
+      
+================================================================================
+FILE: .\5-casteo_de_datos.html
+================================================================================
+<!-- 
+    Nombre del archivo: 5-casteo_de_datos.html. 
+    Copyright:  FAHJ
+    Autor:  Francisco Arellano Herdson Josué
+    Fecha : 03/06/2022
+    Versión:  1.0
+    Descripción: Mostrar el uso de casteo de datos para cambiar los datos. 
+
+ -->
+
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Casteo de datos (String, Number, Boolean, parseInt, paseFloat)</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones. 
+    /*
+        Nombre de función: imprimirTitulo
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué 
+        Fecha: 01/06/2022
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el título en html. 
+        Descripción: Imprimira en html un título con el formato h1.
+        Nota: Esta es mi versión  del código proporcionado por CISCO-NETWORKING-ACADEMY-Java Script Essentials. 
+ 
+    */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+    }
+
+   /*
+        Nombre de la función: imprimirContenido. 
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 01/06/2022
+        Versión: 1.0
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el contenido
+        Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+
+        document.write("<h3>" + mensaje + "</h3>"); 
+    
+    }
+
+    /*
+        Nombre de función: imprimirNotas
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 03/06/2022
+        Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+    */
+   
+    function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+    }
+
+
+//Casteo de datos 
+
+        //Se pueden utilizar sin argumentos debido a que regresan un valor default: String->" ",  Number-> 0, Boolean->0
+        // BigInt->Se le debe de dar un valor inicial. 
+
+        const cadena = String();
+        const numero = Number();
+        const booleano = Boolean();
+
+        //Métodos para castear Objetos .parseInt() y .parseFloat
+
+    
+        imprimirTitulo("Casteo de datos (String, Number, Boolean, parseInt, paseFloat)")
+        imprimirTitulo("Casteo de datos (valores default)"); 
+        //En este caso utilice cadena.replace("", "''") para que mostará que String devuelve un caracter en blanco. 
+        imprimirContenido("El valor default para const cadena = String()  es: "+ String(cadena.replace("", "' '"))); // ->
+        imprimirContenido("El valor default para const numero = Number() es: "+ numero); // -> 0
+        imprimirContenido("El valor default para  const booleano = Boolean() es: "+ booleano); // -> false
+        
+        const big1 = BigInt(42);
+        console.log(big1); // -> 42n
+        
+        //Const big2 = BigInt();   // -> Uncaught TypeError: Cannot convert undefined to a BigInt
+
+
+
+        imprimirTitulo("Casteando Con Diferentes Datos"); 
+        const enteroAcadena = String(numero);
+        const enteroAcadena2 = String(10);
+        const booleanAcadena = String(true);
+        const cadenaAnumero= Number("234");
+        const boolFromNumber = Boolean(0);
+
+        imprimirContenido("El contenido para (enteroAcadena = String(numero))  es : " + enteroAcadena); 
+        imprimirContenido("El contenido para (enteroAcadena2 = String(8))  es : "  +  enteroAcadena2); 
+        imprimirContenido("El contenido para (booleanAcadena = String(true))  es : " + booleanAcadena); 
+        imprimirContenido("El contenido para (cadenaAnumero = Number('312') ) es :  "  +  cadenaAnumero); 
+        imprimirContenido("El contenido para (numeroAboolean = Boolean(0) ) es : "  + boolFromNumber); 
+
+
+
+        //Casteo de datos con Number. 
+        imprimirTitulo("Casteo De Datos Con Number"); 
+        console.log(Number(42)); // -> 42
+
+        imprimirContenido("El contenido para  (Number('11'))  es: " + Number('11') ); // -> 11
+        imprimirContenido("El contenido para (Number('0x11') ) es: " + Number('0x11')); // -> 17
+        imprimirContenido("El contenido para  (Number('0o11'))  es: " + Number('0o11')); // -> 9
+        imprimirContenido("El contenido para (Number('0b11') ) es: " + Number('0b11')); // -> 3
+        imprimirContenido("El contenido para  (Number('12e3') ) es: " + Number('12e3')); //  -> 12000
+        imprimirContenido("El contenido para (Number('Infinity'))  es: " + Number('Infinity'));// -> Infinity
+        imprimirContenido("El contenido para (Number('text') ) es: " + Number('text')); // -> NaN
+
+        imprimirContenido("El contenido para (Number(14n)) es: " + Number(14n)); // -> 14
+        imprimirContenido("El contenido para (Number(123456789123456789123n)) es: " + Number(123456789123456789123n)); // - >  123456789123
+      
+
+        imprimirContenido("El contenido para (Number(true)) es: " + Number(true)); // -> 1
+        imprimirContenido("El contenido para (Number(false)) es: " + Number(false)); // -> 0
+
+        imprimirContenido("El contenido para (Number(undefined)) es: " + Number(undefined)); //  -> NaN
+
+        imprimirContenido("El contenido para (Number(null)) es: " + Number(null));// -> 0
+
+
+        //Casteo de datos con Boolean.
+        imprimirTitulo("Casteo De Datos Con Boolean"); 
+        imprimirContenido("El contenido para (Boolean(true)) ) es: " + Boolean(true)); // -> true
+        imprimirContenido("El contenido para (Boolean(42) ) es: " + Boolean(42)); // -> true
+        imprimirContenido("El contenido para (Boolean(0) ) es: " + Boolean(0)); // -> false
+        imprimirContenido("El contenido para (Boolean(NaN)) es: " + Boolean(NaN)); // -> false
+
+        imprimirContenido("El contenido para (Boolean('text') ) es: " + Boolean("text")); // -> true
+        imprimirContenido("El contenido para (Boolean('') ) es: " + Boolean("")); // -> false
+        imprimirContenido("El contenido para ( Boolean(undefined)) es: " + Boolean(undefined)); // -> false
+        imprimirContenido("El contenido para (Boolean(null)) es: " + Boolean(null)); // -> false 
+
+
+    
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/en-US/docs/Glossary/Type_Conversion
+        
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+   
+
+</script>
+================================================================================
+FILE: .\6-hoisting.html
+================================================================================
+<!-- 
+    Nombre del archivo: 6-hoisting.html  
+    Copyright:  FAHJ
+    Autor:  Francisco Arellano Herdson Josué
+    Fecha : 03/06/2022
+    Versión:  1.0
+    Descripción: Se analizará como es que en JS es posible usar variables que no se han declarado antes
+    , este concepto se llama elevación (hoisting) únicamente se puede hacer con var. 
+
+ -->
+
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Hoisting</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones 
+
+        /*
+        Nombre de función: imprimirTitulo
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué 
+        Fecha: 01/06/2022
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el título en html. 
+        Descripción: Imprimira en html un título con el formato h1. 
+    */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+    }
+
+   /*
+        Nombre de la función: imprimirContenido. 
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 01/06/2022
+        Versión: 1.0
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el contenido
+        Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+
+        document.write("<h3>" + mensaje + "</h3>"); 
+    
+    }
+
+     /*
+        Nombre de función: imprimirNotas
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 03/06/2022
+        Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+    */
+   
+    function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+    }
+
+//hoisting (Utilizar una variable o función que no ha sido declarada )
+     imprimirTitulo("Hoisting"); 
+     imprimirContenido("Utilizaremos x, no obstante, aún no se ha declarado." ); 
+     imprimirContenido("x === undefined: " + (x === undefined)); //->true.
+     var x = 3;
+     imprimirContenido("Valor de x después de asignarle un valor y declararla: " + x ); 
+     imprimirNotas("Nota: aplica también para funciones declaradas dentro de una variable con var. ")
+
+
+     
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/es/docs/Glossary/Hoisting
+
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+    </script>
+
+    
+================================================================================
+FILE: .\7-string_interpolation.html
+================================================================================
+<!-- 
+    Nombre del archivo: 7-string_interpolation
+    Copyright:  FAHJ
+    Autor:  Francisco Arellano Herdson Josué
+    Fecha : 03/06/2022
+    Versión:  1.0
+    Descripción: Se analizará el uso de ${<variable>} para concatenar variables dentro de `  `.
+    Nota: Es una tilde invertida (alt gr + })
+-->
+
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>String interpolation</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones 
+
+        /*
+        Nombre de función: imprimirTitulo
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué 
+        Fecha: 01/06/2022
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el título en html. 
+        Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+    }
+
+   /*
+        Nombre de la función: imprimirContenido. 
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 01/06/2022
+        Versión: 1.0
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el contenido
+        Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+
+        document.write("<h3>" + mensaje + "</h3>"); 
+    
+    }
+
+     /*
+        Nombre de función: imprimirNotas
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 03/06/2022
+        Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+    */
+   
+    function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+    }
+
+//String interpolation `${variable}`
+
+
+    //Debemos usar alt gr + ]
+    const numeroDePrueba = 42;
+    const mensaje = `El numeroDePrueba es ${numeroDePrueba}`;
+    imprimirTitulo("Interpolación de strings"); 
+    imprimirContenido("Se puede utilizar para concatenar variables, únicamente debes agregar ${ <variable> } dentro de los \` \` para realizar esta acción."); 
+    imprimirContenido(`Mensaje interpolado: ${mensaje} .`); // => 'The numeroDePrueba is 42'
+    imprimirNotas("Nota: no son comillas dobles son acentos invertidos `  ` .") 
+  
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Template_literals
+
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+
+</script>
+================================================================================
+FILE: .\8-indexOf_length.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 8-indexOf_lenght.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha: 01/06/202
+	Versión: 1.0
+	Descripción: En este documento se analizará el uso del método .indexOf para encontrar la coincidencia de un elemento
+    en un array y el método .lenght para encontrar cuantos elementos tiene un arrayo un string. 
+
+ -->
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>indexOf &  lenght</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones.
+     /*
+        Nombre de función: imprimirTitulo
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué 
+        Fecha: 01/06/2022
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el título en html. 
+        Descripción: Imprimira en html un título con el formato h1. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+    }
+
+   /*
+        Nombre de la función: imprimirContenido. 
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 01/06/2022
+        Versión: 1.0
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el contenido
+        Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+        
+        document.write("<h3>" + mensaje + "</h3>"); 
+    
+    
+    }
+
+      /*
+        Nombre de función: imprimirNotas
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 03/06/2022
+        Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+    */
+   
+    function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+    }
+
+//indexOf & length
+    //length->Devuelve la cantidad total de elementos que tiene un array o un string. 
+    imprimirTitulo("Métodos indexOf &  length")
+    imprimirTitulo(".lenght"); 
+    let frutas  = ["Pera", "Uva", "Manzana", "Platano"];
+    imprimirContenido('Variable original: let frutas  = ["Pera", "Uva", "Manzana", "Platano"]; ')
+    imprimirContenido( "El contenido para frutas.length  es: " + frutas.length); // -> 4
+
+    frutas[5] = "Mamey";
+    imprimirContenido( "El contenido para  frutas.length es (se agrego un elemento más): " + frutas.length); // -> 6
+
+    imprimirContenido( "El contenido para frutas es: " + frutas); 
+    
+    imprimirContenido( "El contenido para frutas[3] es: " + frutas[3]); 
+    imprimirContenido( "El contenido para frutas[4] es: " + frutas[4]);
+    imprimirContenido( "El contenido para frutas[5] es: " + frutas[5]); 
+
+    //indexOf
+    imprimirTitulo(".indexOf('elemento_a_buscar')"); 
+    imprimirContenido("Regresará la posición de la  primera coincidencia del elemento buscado."); 
+   
+    let nombres = ["Katy", "Kari", "Misa", "Leo"];
+    imprimirContenido('Variable original: let nombres = ["Katy", "Kari", "Misa", "Leo"]; ')
+    imprimirContenido("El contenido para  nombres.indexOf('Misa')  es: " + nombres.indexOf("Misa")); // -> 2
+    imprimirContenido("El contenido para  nombres.indexOf('Leo')  es: " + nombres.indexOf("Leo")); // -> 2
+        //Se muestra un -1 por que no existe. 
+    imprimirContenido("El contenido para nombres.indexOf('Victor')  es: " + nombres.indexOf("Victor")); // -> -1
+
+
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/length
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+</script>
+================================================================================
+FILE: .\9-push_unshift_pop_shift.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: tipos_de_datos.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha: 01/06/202
+	Versión: 1.0
+	Descripción: En este documento se analizará el uso de los métodos push, unshift, pop &shift. 
+
+ -->
+
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>push & unshift & pop & shift</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+//Definición de funciones. 
+
+     /*
+        Nombre de función: imprimirTitulo
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué 
+        Fecha: 01/06/2022
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el título en html. 
+        Descripción: Imprimira en html un título con el formato h2. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+    }
+
+   /*
+        Nombre de la función: imprimirContenido. 
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 01/06/2022
+        Versión: 1.0
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el contenido
+        Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+        
+        document.write("<h3>" + mensaje + "</h3>"); 
+    
+    
+    }
+
+
+
+    /*
+    Nombre de función: imprimirNotas
+    Copyright: FAHJ
+    Autor: Francisco Arellano Herdson Josué
+    Fecha: 03/06/2022
+    Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+    Parámetros: 
+        por valor: 
+            mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+    */
+
+    function imprimirNotas(mensaje){
+    document.write("<h4>" + mensaje + "</h4>"); 
+    }
+//push & unshift & pop & shift.
+    /*
+    Agregar elementos
+        push:Agrega un elemento al final del array. 
+        unshift:Agrega un elemento al principio del array. 
+    Eliminar elementos
+        pop:Elimina un elemento al final de array. 
+        shift:Elimina un elemento al principio del array. 
+    */
+        
+
+    imprimirTitulo("push & unshift & pop & shift"); 
+   
+        //push->Agrega un elemento al final del array.
+            imprimirTitulo(".push('nuevo_elemento')");  
+            let pushNames = ["Katy", "Kari", "Misa", "Leo"];
+            imprimirContenido('variable original: let pushNames = ["Katy", "Kari", "Misa", "Leo"]; ')
+            imprimirContenido("El contenido para pushNames.length es:  "+ pushNames.length); // -> 4
+
+            pushNames.push("Alma");
+
+            imprimirContenido("pushNames.push('Alma');")
+            imprimirContenido("El contenido parapushNames.length es:  "+ pushNames.length); // -> 5
+            imprimirContenido("El contenido para  pushNames  es:  "+ pushNames); // - > ["Olivia", "Emma", "Mateo", "Samuel", "Alma"]
+        //unshift->Agrega un elemento al principio del array. 
+            imprimirTitulo(".unshift('nuevo_elemento')")
+            let unshiftNames = ["Katy", "Kari", "Misa", "Leo"];
+            imprimirContenido('variable original: let unshiftNames = ["Katy", "Kari", "Misa", "Leo"]; ')
+            unshiftNames.unshift("Sandra");
+            imprimirContenido(" unshiftNames.unshift('Sandra');")
+            imprimirContenido("El contenido para unshiftNames.length es:  "+ unshiftNames.length); // -> 5
+            imprimirContenido("El contenido para unshiftNames es:  "+ unshiftNames); // - > ["Olivia", "Emma", "Mateo", "Samuel", "Alma"]
+    //pop & shift 
+
+            //pop->ELimina un elemento al final de array. 
+            imprimirTitulo(".pop()"); 
+            let popNames= ["Katy", "Kari", "Misa", "Leo"];
+            imprimirContenido('variable original: let popNames= ["Katy", "Kari", "Misa", "Leo"];')
+            imprimirContenido("El contenido para popNames es: " + popNames); // -> ["Olivia", "Emma", "Mateo"]
+            imprimirContenido("El contenido para popNames.length es: " + popNames.length); // -> 4
+
+            let popName = popNames.pop();
+            imprimirContenido("let popName = popNames.pop();")
+            imprimirContenido("El contenido para  popNames.length es: " + popNames.length); // -> 3
+            imprimirContenido("El contenido para   let popName = popNames.pop() es: " + popName); // -> Samuel
+            imprimirContenido("El contenido para popNames es: " + popNames); // -> ["Olivia", "Emma", "Mateo"]
+            
+            //shift->Elimina un elemento al principio de un array. 
+            imprimirTitulo(".shift()"); 
+            let shiftNames = ["Katy", "Kari", "Misa", "Leo"];
+            imprimirContenido('variable original: let shiftNames = ["Katy", "Kari", "Misa", "Leo"];')
+            imprimirContenido("El contenido para shiftNames es: " + shiftNames); // -> ["Emma", "Mateo", "Samuel"]
+            imprimirContenido("El contenido para shiftNames.length es: " + shiftNames.length); // -> 4
+
+            let shiftName = shiftNames.shift();
+            imprimirContenido("let shiftName = shiftNames.shift();")
+            imprimirContenido("El contenido para shiftNames.length es: " + shiftNames.length); // -> 3
+            imprimirContenido("El contenido para shiftName es: " + shiftName); // -> Olivia
+            imprimirContenido("El contenido para shiftNames es: " + shiftNames); // -> ["Emma", "Mateo", "Samuel"]
+
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/shift
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/pop
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+</script>
+
+================================================================================
+FILE: .\10-reverse_concat.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 10-reverse_concat_slice.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha: 03/06/2022
+	Versión: 1.0
+	Descripción: En este documento se analizará el uso de los métodos reverse->los datos del array se invertirán , 
+    slice para obtener partes de un  array y concat para unir arrays.  
+
+ -->
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Reverse & concat</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+//Definición de funciones
+
+     /*
+        Nombre de función: imprimirTitulo
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué 
+        Fecha: 01/06/2022
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el título en html. 
+        Descripción: Imprimira en html un título con el formato h2. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+    }
+
+   /*
+        Nombre de la función: imprimirContenido. 
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 01/06/2022
+        Versión: 1.0
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el contenido
+        Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+        
+        document.write("<h3>" + mensaje + "</h3>"); 
+    
+    
+    }
+   
+
+    /*
+        Nombre de función: imprimirNotas
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 03/06/2022
+        Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+    */
+   
+    function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+    }
+
+
+//contat & reverse & slice. 
+
+    imprimirTitulo("concat & reverse & slice"); 
+    //concat(array)->Une dos arrays. 
+    imprimirTitulo(".concat(array_a_concatenar)"); 
+    let nombres = ["Katy", "Kari", "Misa", "Leo"];
+    let nuevosNombres = ["Teresa", "Elian"];
+    let nombresCompletos = nombres.concat( nuevosNombres);
+    imprimirContenido('variable original : let nombres = ["Katy", "Kari", "Misa", "Leo"];')
+    imprimirContenido('variable original : let nuevosNombres = ["Teresa", "Elian"];')
+    imprimirContenido('variable original : let nombresCompletos = nombres.concat( nuevosNombres);')
+    imprimirContenido("El contenido para (nuevosNombres ) es: " + nuevosNombres); // -> ["Teresa", "Elian"]
+    imprimirContenido("El contenido para (nombres ) es: " + nombres); // -> ["Olivia", "Emma", "Mateo","Samuel"]
+    imprimirContenido("El contenido para (nombresCompletos = nombres.concat( nuevosNombres)) es: " + nombresCompletos); // -> ["Olivia", "Emma", "Mateo","Samuel", "Teresa", "Elian"]
+
+    //.reverse()->Invierte el orden de los elementos en un array. 
+    imprimirTitulo(".reverse()")
+    let nombresReverse = ["Katy", "Kari", "Misa", "Leo"];
+    imprimirContenido('variable original:  let nombresReverse = ["Katy", "Kari", "Misa", "Leo"];')
+    imprimirContenido("El contenido para nombresReverse (array original) es: " + nombresReverse); // -> ["Samuel", "Mateo", "Emma","Olivia"]
+    nombresReverse.reverse();
+    imprimirContenido('nombresReverse.reverse()'); 
+    imprimirContenido("El contenido para nombresReverse(array con reverse) es: " + nombresReverse); // -> ["Samuel", "Mateo", "Emma","Olivia"]
+
+    //.slice (inicio_incluyente, final_excluyente)
+    imprimirTitulo(".slice(inicio_incluyente, final_excluyente)"); 
+    let sliceNombres = ["Katy", "Kari", "Misa", "Leo"];
+    imprimirContenido('variable original: let sliceNombres = ["Katy", "Kari", "Misa", "Leo"]')
+    imprimirContenido("El array original es: " + sliceNombres); 
+    //nota: sí le indicas el final, toma desde el inicio hasta el final como en la variable n1.
+    let n1 = sliceNombres.slice(2);
+    imprimirContenido("El contenido para  (let n1 = sliceNombres.slice(2))  es: " + n1); // -> ["Mateo", "Samuel"]
+    //El 3 es excluyente por lo tanto no lo toma en cuenta. 
+    let n2 = sliceNombres.slice(1,3);
+    imprimirContenido("El contenido para  (n2 = sliceNombres.slice(1,3))  es: " + n2); // -> ["Emma", "Mateo"]
+    //El -1 es excluyente por lo tanto no lo toma en cuenta. 
+    let n3 = sliceNombres.slice(0, -1);
+    imprimirContenido("El contenido para (sliceNombres.slice(0, -1) ) es: " + n3); // -> ["Olivia", "Emma", "Mateo"]
+
+    let n4 = sliceNombres.slice(-1);
+    imprimirContenido("El contenido para (sliceNombres.slice(-1))  es: " + n4); // -> ["Samuel"]
+
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse?adlt=strict&toWww=1&redig=5F67C3964C8A4870AE3E10F397CADDA4
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat?adlt=strict&toWww=1&redig=984FEDEC5A704512B3CA22641FBC3E5D
+
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+</script>
+================================================================================
+FILE: .\11-operaciones_basicas.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 11-operaciones_basicas.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha: 06/06/2022
+	Versión: 1.0
+	Descripción: En este documento se analizará el uso de los operadores ariméticos segundoNumero compund operands (asignaciones rápidas) en JS
+                 asignación de anulación lógica segundoNumero asignaciones bit a bit.
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="primerNumero-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Operaciones básicas</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones. 
+     /*
+        Nombre de función: imprimirTitulo
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué 
+        Fecha: 01/06/2022
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el título en html. 
+        Descripción: Imprimira en html un título con el formato h1. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+    }
+
+   /*
+        Nombre de la función: imprimirContenido. 
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 01/06/2022
+        Versión: 1.0
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el contenido
+        Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+        
+        document.write("<h3>" + mensaje + "</h3>"); 
+    
+    
+    }
+
+
+
+    /*
+    Nombre de función: imprimirNotas
+    Copyright: FAHJ
+    Autor: Francisco Arellano Herdson Josué
+    Fecha: 03/06/2022
+    Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+    Parámetros: 
+        por valor: 
+            mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+    */
+
+    function imprimirNotas(mensaje){
+    document.write("<h4>" + mensaje + "</h4>"); 
+    }
+
+//Operadores ariméticos segundoNumero compund operands aritméticos segundoNumero  compund operands Booleanos. 
+
+    var  primerNumero = 5;
+    var  segundoNumero = 2;
+
+    imprimirTitulo("Operadores ariméticos segundoNumero compund operands (asignaciones rápidas)"); 
+    imprimirTitulo("Operadores ariméticos"); 
+    imprimirContenido("primerNumero: " + primerNumero); 
+    imprimirContenido("segundoNumero: " + segundoNumero); 
+    imprimirContenido(`Suma (${primerNumero} + ${segundoNumero}) : ` + (primerNumero  +  segundoNumero)); // -> 7
+    imprimirContenido(`Resta (${primerNumero} - ${segundoNumero}) : ` + ( primerNumero - segundoNumero)); // -> 3
+    imprimirContenido(`Multiplicación (${primerNumero} * ${segundoNumero}) : ` + ( primerNumero * segundoNumero)); // -> 10
+    imprimirContenido(`division (${primerNumero} / ${segundoNumero}) : ` + ( primerNumero / segundoNumero)); // -> 2.5
+    imprimirContenido(`Módulo (${primerNumero} % ${segundoNumero} ) : ` +  (primerNumero % segundoNumero)); // -> 1
+    imprimirContenido(`Exponente (${primerNumero} ** ${segundoNumero}) : ` + ( primerNumero ** segundoNumero)); // -> 25
+
+    //Compound Assignment arithmetics
+    imprimirTitulo("Compound Assignment arithmetics"); 
+    var primerNumero = 10;
+    
+    imprimirContenido("primerNumero : " + primerNumero); 
+    primerNumero += 2;
+    imprimirContenido("primerNumero += 2 :  " + primerNumero); // -> 12
+    primerNumero -= 4;
+    imprimirContenido("primerNumero -= 4 : " + primerNumero); // -> 8
+    primerNumero *= 3;
+    imprimirContenido("primerNumero *= 3 : " + primerNumero); // -> 24
+    primerNumero /= 6;
+    imprimirContenido("primerNumero /= 6 : " + primerNumero); // -> 4
+    primerNumero **= 3;
+    imprimirContenido("primerNumero **=3 : " + primerNumero); // -> 64
+    primerNumero %= 10;
+    imprimirContenido("primerNumero %= 10 : " + primerNumero); // -> 4
+    
+    //Compound Assignment Booleans"
+    imprimirTitulo("Compound Assignment Booleans"); 
+    let a = true;
+    imprimirContenido("a: " + a); 
+    imprimirContenido("El contenido para (a) es : " + a); // -> true
+    a &&= false;
+    imprimirContenido("El contenido para (a &&= false) es : " + a); // -> false
+    a = true
+    imprimirContenido("a = true")
+    imprimirContenido("a: " + a); 
+    a ||= false;
+    imprimirContenido("El contenido para (a ||= false) es : " + a); // -> false
+
+    //Otro tipo de asignaciones: Negación lógica segundoNumero asignaciones bit a bit. 
+    imprimirTitulo("Negación lógica segundoNumero asignaciones bit a bit."); 
+
+    var primerNumero = 14;
+    var segundoNumero = null;
+    var tercerNumero = 15;
+    
+    imprimirContenido("primerNumero :  " + primerNumero); 
+    imprimirContenido("segundoNumero :  " + segundoNumero); 
+    imprimirContenido("tercerNumero :  " + tercerNumero); 
+    
+
+    //El contenido únicamente se asigna si  la variable del lado izquierdo es null  undefined. 
+
+    //El valor de primerNumero no cambia por que no es null. 
+    primerNumero ??= tercerNumero;
+    
+    // El valor de  segundoNumero será cambiado por que es null. 
+
+    segundoNumero ??= tercerNumero;
+
+    imprimirContenido("El conenido para (primerNumero ??= tercerNumero) esto es igual a (primerNumero ?? (primerNumero = tercerNumero)) cuyo  valor es : " + primerNumero)    // 14
+    imprimirContenido("El conenido para (segundoNumero ??= tercerNumero) esto es igual a (segundoNumero ?? (segundoNumero = tercerNumero)) entonces (segundoNumero) es : " + segundoNumero)      // 15
+    imprimirNotas("Asignación de anulación lógica. "); 
+    //JS ve a los datos como un se de 32 bits en lugar de bigInt o hexadecimales. 
+    imprimirContenido("<h2>Desplazamiento de bits</h2>"); 
+    imprimirContenido("Desplamiento de bit a la derecha : primerNumero >>= segundoNumero "); 
+    imprimirContenido("Desplamiento de bit a la izquierda : primerNumero <<= segundoNumero "); 
+    imprimirContenido("<h2>Asignaciones bit a bit</h2>"); 
+    imprimirContenido("Asignación AND bit a bit primerNumero &= segundoNumero"); 
+    imprimirContenido("Asignación OR bit a bit  primerNumero |= segundoNumero"); 
+    imprimirContenido("Asignación XOR bit a bit  primerNumero ^= segundoNumero"); 
+
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators?adlt=strict&toWww=1&redig=E9AD5E92A8BF485882A31EDDD65669DA
+
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+
+    </script>
+================================================================================
+FILE: .\12-incrementos_y_decrementos_en_uno.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 12-incrementos_y_decrementos_en_uno.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha: 06/06/2022
+	Versión: 1.0
+	Descripción: En este documento se analizará el uso de los incrementos y decrementos en uno en JS. 
+
+ -->
+
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Incrementos y decrementos</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+//Definición de funciones. 
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h1. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        
+        }
+
+
+
+        /*
+        Nombre de función: imprimirNotas
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 03/06/2022
+        Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+
+        function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+//Incrementos y decrementos en uno. 
+
+        //Incremento en uno ++ (sufijo==después)
+        imprimirTitulo("Incrementos y decrementos");
+        imprimirTitulo("Incremento en uno (sufijo(después))")
+        let incrementoSufijo = 10;
+        let incrementoPrefijo = 10;
+
+        imprimirContenido("incrementoSufijo : " + incrementoSufijo ); 
+        
+        imprimirContenido("incrementoSufijo++ : " + incrementoSufijo++); // -> 10
+        imprimirContenido("incrementoSufijo : " + incrementoSufijo); // -> 11
+        imprimirNotas("sufijo: primero usa la variable y después la incrementa."); 
+        //Incremento en uno ++ (prefijo==antes)
+        imprimirTitulo("Incremento en uno (prefijo(antes))"); 
+        imprimirContenido("incrementoPrefijo : " + incrementoPrefijo); // -> 10
+        imprimirContenido("++incrementoPrefijo: " + ++incrementoPrefijo); // -> 11
+        imprimirContenido("incrementoPrefijo : " + incrementoPrefijo); // -> 11
+        imprimirNotas("prefijo: primero la incrementa y después usa la variable."); 
+        
+        //Decremento en uno -- (sufijo==después)
+        imprimirTitulo("Decremento en uno (sufijo(después))"); 
+        let decrementoSufijo = 20;
+        let decrementoPrefijo = 20;
+        
+        imprimirContenido("decrementoSufijo : " + decrementoSufijo); // -> 20
+        imprimirContenido("decrementoSufijo-- : " + decrementoSufijo--); // -> 20
+        imprimirContenido("decrementoSufijo : " + decrementoSufijo); // -> 19
+        imprimirNotas("sufijo: primero usa la variable y después la decrementa."); 
+        //Decremento en uno  -- (prefijo==antes)
+        imprimirTitulo("Decremento en uno  -- (prefijo(antes))"); 
+        imprimirContenido("decrementoPrefijo : " + decrementoPrefijo); // -> 20
+        imprimirContenido("--decrementoPrefijo : " + --decrementoPrefijo); // -> 19
+        imprimirContenido("decrementoPrefijo : " + decrementoPrefijo); // -> 19
+        imprimirNotas("prefijo: primero la decrementa y después usa la variable."); 
+    
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment?adlt=strict&toWww=1&redig=E83CEB41B79348B7B24BA3C83FCF17C0
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+
+    </script>
+================================================================================
+FILE: .\13-operadores_logicos.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 13-operadores_logicos.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha: 06/06/2022
+	Versión: 1.0
+	Descripción: En este documento se analizará el uso de los operadores lógicos, AND, OR y NOT. 
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Operadores lógicos</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+//Definición de funciones. 
+
+    /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+        /*
+                Nombre de la función: imprimirContenido. 
+                Copyright: FAHJ
+                Autor: Francisco Arellano Herdson Josué
+                Fecha: 01/06/2022
+                Versión: 1.0
+                Parámetros: 
+                    por valor: 
+                        mensaje: Es un string pasado por valor para imprimir el contenido
+                Descripción: Imprimira en html un título con el formato h3. 
+        */
+        function imprimirContenido(mensaje){
+                
+                document.write("<h3>" + mensaje + "</h3>"); 
+            
+            }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+//Operadores lógicos AND, OR and NOT. 
+
+
+        //AND 
+        imprimirTitulo("Operadores lógicos AND, OR  and NOT"); 
+        imprimirTitulo("AND"); 
+        imprimirContenido("El contenido para (true && true)  es :  " + (true && true)); // -> true
+        imprimirContenido("El contenido para (true && false)  es :  " + (true && false)); // -> false
+        imprimirContenido("El contenido para  (false && true)  es :  " + (false && true)); // -> false
+        imprimirContenido("El contenido para (false && false)  es :  " + (false && false)); // -> false
+        imprimirNotas("Nota: 'Requiere exactamente dos bits encendidos para devolver verdadero'. ")
+
+        imprimirTitulo("AND Siempre regresará el primer operando si evalua falso, y el segundo operando de lo contrario."); 
+        imprimirContenido("El contenido para (true && 1991) es :  " + (true && 1991)); // -> 1991
+        imprimirContenido("El contenido para (false && 1991) es :  " + (false && 1991)); // -> false
+        imprimirContenido("El contenido para (2 && 5) es :  " + (2 && 5)); // -> 5
+        imprimirContenido("El contenido para (0 && 5) es :  " + (0 && 5)); // -> 0
+        imprimirContenido("El contenido para ('Alice' && 'Bob') es :  " + ("Alice" && "Bob")); // -> Bob
+        imprimirContenido("El contenido para (' ' && 'Bob') es :  " + ("" && "Bob")); // -> empty string
+
+        
+        imprimirTitulo("AND"); 
+        let x = 0;
+        let y = 0;
+        imprimirContenido("La variable original x es:" + x ); // -> 0
+        imprimirContenido("La variable original y es:" + y); // -> 0
+        imprimirContenido("El contenido para (x++ && y++) es: " + (x++ && y++)); // -> 0
+        imprimirContenido("El contenido para x es: " + x); // -> 1
+        imprimirContenido("El contenido para y es: " + y); // -> y == 0
+        imprimirNotas("Nota: el segundo operando nunca se ejecutará, por que el primero se evaluó como falso, por lo tanto se ejecutó. "); 
+
+        //OR
+        imprimirTitulo("OR"); 
+        imprimirContenido("El contenido para (true || true)  es :  " + (true || true)); // -> true
+        imprimirContenido("El contenido para (true || false)  es :  " + (true || false)); // -> true
+        imprimirContenido("El contenido para  (false || true)  es :  " + (false || true)); // -> true
+        imprimirNotas("Nota: 'Requiere al menos un bit encendido para devolver verdadero'.")
+        imprimirTitulo("OR Siempre regresará el primer operando si se evalua verdadero, y el segundo de lo contrario."); 
+        imprimirContenido("El contenido para (true || 1991)  es : " + (true || 1991)); // -> true
+        imprimirContenido("El contenido para (false || 1991)  es : " + (false || 1991)); // -> 1991
+        imprimirContenido("El contenido para  (2 || 5)  es : " + (2 || 5)); // -> 2
+        imprimirContenido("El contenido para (0 || 5)  es : " + (0 || 5)); // -> 5
+        imprimirContenido("El contenido para ('Alice' || 'Bob')  es : " + ("Alice" || "Bob")); // -> Alice
+        imprimirContenido("El contenido para  ('' || 'Bob')  es : " + ("" || "Bob")); // -> Bob
+        imprimirContenido("El contenido para false || false  es :  " + (false || false)); // -> false
+        imprimirNotas("Nota: ! AND y OR -> siempre regresarán uno de los valores antes o después de utilizar estos valores lógicos, no necesariamente devolverá un valor booleano."); 
+        
+        //NOT
+        imprimirTitulo("NOT"); 
+        imprimirContenido("El contenido para (!true)  es :  " + !true); // -> false
+        imprimirContenido("El contenido para (!false)  es :  " + !false); // -> true
+        imprimirNotas("Nota: ! NOT -> siempre regresará un valor booleano."); 
+
+
+        
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR?adlt=strict&toWww=1&redig=9C8A55663A8A44B48AA3F5E4D212A471
+
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+
+        
+</script>
+================================================================================
+FILE: .\14-operadores_de_comparacion.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 14-operadores_de_comparación.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha: 06/06/2022
+	Versión: 1.0
+	Descripción:En este documento se analizará el uso de los siguientes operadores de comparación: ===,!==, <=, >= , > y  <. 
+
+ -->
+
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Operadores  de comparación</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+//Definición de funciones. 
+
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        
+        }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+
+
+        function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+//Operadores de comparación: ===,!==, <=, >= , > y  <. 
+
+        imprimirTitulo("Operadores De Comparación"); 
+
+        //Estrictamente igual ===. 
+        imprimirContenido("<h2>Estrictamente igual (===)  </h2>"); 
+        imprimirContenido("El contenido para (0 == false) es : " + (0 == false)); //->True
+        imprimirContenido("El contenido para (0 === false) es : " + (0 === false)); //->False
+        imprimirContenido("<br>")
+        //Estrictamente desigual !==. 
+        imprimirContenido("<h2>Estrictamente desigual !== </h2>"); 
+        imprimirContenido("El contenido para (10 !== 5) es : " + (10 !== 5)); // -> true
+        imprimirContenido("El contenido para (10 !== 10) es : " + (10 !== 10)); // -> false
+        imprimirContenido("El contenido para  (10 !== 10n) es : " + (10 !== 10n)); // -> true
+        imprimirContenido("El contenido para (10 !== '10') es : " + (10 !== "10")); // -> true
+        imprimirContenido("<br>")
+        //Mayor igual >= , menor igual <= , mayor que > y menor que <.
+        imprimirContenido("<h2>Mayor igual, menor igual, mayor y menor que.</h2>"); 
+        //mayor que >
+        imprimirContenido("<h3>Mayor que '>'</h3>"); 
+        imprimirContenido("El contenido para (10 > 100)  es :  " + (10 > 100)); // -> false
+        imprimirContenido("El contenido para (101 > 100)  es :  " + (101 > 100)); // -> true
+        imprimirContenido("El contenido para (101 > '100')  es :  " + (101 > '100')); // -> true
+       
+        imprimirContenido("<h3>Menor que '<'</h3>"); 
+        imprimirContenido("El contenido para  (101 < 100)  es :  " + (101 < 100)); // -> false
+        imprimirContenido("El contenido para (100n < 102)  es :  " + (100n < 102))     ; // -> true
+        imprimirContenido("El contenido para ('10' < 20n) es :  " + ('10' < 20n)); // -> true
+ 
+        imprimirContenido("Menor igual '<='"); 
+        imprimirContenido("El contenido para (101 <= 100)  es :  " + (101 <= 100)); // -> false
+        imprimirContenido("El contenido para ('10' <=  20)  es :  " + ('10' <=  20)); // -> true
+        imprimirContenido("Mayor igual '>='"); 
+        imprimirContenido("El contenido para (10 >= 10n)  es :  " + (10 >= 10n)); // -> true
+          /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Equality?adlt=strict&toWww=1&redig=292C8F5E370B406296496DAE99277881
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+</script>
+================================================================================
+FILE: .\15-getElementById.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 15-getElementById.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar el uso del método getElementById('id') para obtener un objeto con determinado 
+                 elemento de HMTL. 
+
+ -->
+
+ 
+ <!DOCTYPE html>
+ <html>
+     <head>
+        <title>getElementById</title>
+     </head>
+     <body>      
+         <h1>getElementById</h1>
+         <input style="width: 300px;" id="mensaje" type="text" placeholder="Escriba un mensaje para mostrarlo en alert"></input>
+         <button onclick="alert(document.getElementById('mensaje').value)">Conseguir el texto escrito</button>
+     </body>
+ </html>
+ <script>
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+
+
+        function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+         /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/Variables
+            https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById?adlt=strict&toWww=1&redig=4389672D2F8044A289F27945346AE868
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+</script>
+</script>
+================================================================================
+FILE: .\16-alert.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 16-alert.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción:En este documento se analizará el uso el método alert para mostrar mensajes en pantalla. 
+
+-->
+
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>alert</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones. 
+
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        
+        }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+
+
+        function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+        //alert
+            //Es un método del objeto window, ambas declaraciones son correctas. 
+            alert("Hello. :D")
+            window.alert("Hola, como estas?. :D");
+            alert(5 * 7);
+            alert(true);
+            alert("Texto 1", "Texto 2"); // únicamente imprimirá el primer argumento. 
+            
+         /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/Variables
+
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+</script>
+================================================================================
+FILE: .\17-confirm.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 17-confirm.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción:En este documento se analizará el uso el método confirm para seleccionar sí o cancelar y
+                de acuerdo a esta decisión realizar una acción.  
+
+-->
+
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>confirm</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones. 
+
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        
+        }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+
+       function imprimirNotas(mensaje){
+       document.write("<h4>" + mensaje + "</h4>"); 
+       }
+        //confirm
+            //Es otro método del objeto window: window.confirm
+            //Podemos ponerlo como window.confirm o simplemente confirm
+  
+        let pregunta = confirm("Estas listo?"); //-> Devuelve un booleano. 
+        let mensaje = pregunta ? "Felicidades :D" : "Pronto lo estarás. :))" //Operador ternario
+        alert(mensaje);
+
+        /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm?adlt=strict&toWww=1&redig=FAAA6892E83E4AD2952525C52F28FA9A
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+</script>
+================================================================================
+FILE: .\18-prompt.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 18-promt.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción:En este documento se analizará el uso el método promt para obtener un string(datos) del usuario.  
+
+ -->
+
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta nombre="viewport" content="width=device-width, initial-scale=1.0">
+     <title>prompt</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        
+        }
+
+        
+    /*
+        Nombre de función: imprimirNotas
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 03/06/2022
+        Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+    */
+        
+    function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+    }
+
+        //promt
+            //Es otro método del objeto window: window.prompt. 
+            //prompt siempre capturá un string. 
+
+        let nombre = window.prompt("Cuál es tu nombre", "Josué"); // Nota: es segundo parámetro es como un default. 
+        nombre = nombre ? nombre : "Anónimo";
+
+        let edad = prompt("Hola " + nombre + " Cuántos años tienes?");
+        alert(nombre + " tiene " + edad + " años");
+
+        /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt?adlt=strict&toWww=1&redig=3B9D464FF1D14826B57762C96200141E
+            
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+</script>
+================================================================================
+FILE: .\19-if.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 19-if.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción:En este documento se analizará el uso de la estructura condicional if. 
+
+ -->
+
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>if</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones. 
+
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+        /*
+                Nombre de la función: imprimirContenido. 
+                Copyright: FAHJ
+                Autor: Francisco Arellano Herdson Josué
+                Fecha: 01/06/2022
+                Versión: 1.0
+                Parámetros: 
+                    por valor: 
+                        mensaje: Es un string pasado por valor para imprimir el contenido
+                Descripción: Imprimira en html un título con el formato h3. 
+        */
+        function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        }
+
+        
+    //if 
+        let usuarioListo = confirm("Estas tiste");
+        console.log(usuarioListo);
+        if(usuarioListo) {
+            alert("Usuario triste!");
+
+        /*else if(condition...n){
+            ...
+            }*/
+
+        }else{
+            alert("Usuario no triste. :D")
+        }  
+
+
+        /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else?adlt=strict&toWww=1&redig=8EB09ADBCF394B289502FA127A04C807
+            
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+</script>
+
+================================================================================
+FILE: .\20-switch.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 20-switch. 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción:En este documento se analizará el uso de la estructura condicional switch.
+
+ -->
+
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>switch</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones. 
+
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        
+        }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+
+    /* Switch robusto */
+    var primerNumero = Number(prompt("Ingresa un número: ")); 
+    var segundoNumero = Number(prompt("Ingresa otro número: "))
+    var opcion = prompt("Selecciona una operacion: Suma S, Resta R, Multiplicación M");
+    var resultado = 0; 
+    
+    switch (opcion) {
+        case "Suma":
+        case "suma":
+        case "s":
+        case "S":
+            resultado = primerNumero +  segundoNumero; 
+            break;
+        case "Resta":
+        case "resta":
+        case "R":
+        case "r":
+          resultado = primerNumero  - segundoNumero; 
+          break;
+        case "Multiplicación":
+        case "multiplicación":
+        case "m":
+        case "M":
+            resultado = primerNumero  * segundoNumero; 
+            break;
+        default: //No lleva break
+            alert("Opción no válida " + String(opcion));
+    }
+
+    window.alert("El resultado es: " + resultado)
+        
+        /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else?adlt=strict&toWww=1&redig=8EB09ADBCF394B289502FA127A04C807
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+        
+</script>
+================================================================================
+FILE: .\21-while.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 21-while.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar el uso de la estructura iterativa while.  
+
+
+ -->
+
+  
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>while</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones. 
+
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+        function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+    
+        }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+
+        //While
+        imprimirTitulo("while")
+        let n = 0;
+        imprimirContenido("Variable original: let n = 0;"); 
+        while(n < 91) { //Mientras sea verdad
+            imprimirContenido(n); // -> 0, 15, 30, 45, 60, 75, 90. 
+            n += 15;
+        }
+
+        
+        /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de 
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while?adlt=strict&toWww=1&redig=17741862CDFD418BB7608C79E21D5FCA
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+</script>
+================================================================================
+FILE: .\22-do_while.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 22-do_while.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar el uso de la estructura iterativa do while.  
+
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>do while</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        }
+
+         /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+        
+        
+
+    //do while
+        imprimirTitulo("do { } while(condition)")
+        let condition = false;
+
+        //Nunca entrará al ciclo while normal
+        while (condition) {
+            console.log("A while loop iteration."); 
+        }
+
+
+        //Entrará al ciclo al menos una vez. 
+        do {
+            imprimirContenido("Estamos dentro de un do { ... } while(condicion)"); 
+        } while (condition);
+
+        
+        /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/do...while
+            
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+</script>
+================================================================================
+FILE: .\23-for.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 23-for.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar el uso de la estructura iterativa for. 
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>for</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+
+//Definición de funciones. 
+
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        
+        }
+
+     /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+
+    //for
+
+    imprimirTitulo("for (let i = 0; i < 10; i++){ }"); 
+    for (let i = 0; i < 10; i++) {
+        imprimirContenido(i);
+    }
+
+       /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for
+            
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+    
+
+</script>
+        
+
+================================================================================
+FILE: .\24-for_of.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: for_of
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar el uso de la estructura for of para recorrer arreglos. 
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>for of</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones. 
+
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        
+        }
+
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+
+
+//for_of
+    imprimirTitulo("for(let var of array){ }")//->Es similar a un foreach, es romendado para arrays. 
+    let valores = [10, 3, 5, 17, "Hola :D"];
+    let suma = 0;
+    for (let numeros of valores) {
+       imprimirContenido(numeros)
+    }
+    
+     /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for...of
+            
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+</script>
+================================================================================
+FILE: .\25-for_each.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 25-for_each.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar el uso de la estructura for each in para recorrer objetos.  
+
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta nombre="viewport" content="width=device-width, initial-scale=1.0">
+     <title>for in (each)</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones. 
+
+
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+        */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+
+//for in (each) y método .forEach
+
+        let usuario = {
+            nombre: "Calvin",
+            alias: "Hart",
+            edad: 66,
+            correo: "CalvinMHart@teleworm.us"
+        };
+
+////for in (each) 
+       
+        imprimirTitulo("for(let var in object)");
+        for (let llave in usuario) {
+            imprimirContenido(llave + " : " + usuario[llave]); // -> nombre, alias, edad, correo
+        };    
+
+        imprimirContenido("<br>")
+        //Método .forEach(callback)
+        imprimirContenido("Método .forEach(callback)")
+        let names = ['Ana', 'Paola', 'Ceci'];
+
+        function mostrarNombre(elemento) {
+            imprimirContenido("El contenido del arreglo es: "+ elemento);
+        }
+        
+        names.forEach(mostrarNombre); // -> aplicará esa función para cada elemento.
+
+         /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+</script>
+================================================================================
+FILE: .\26-continue.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 26-continue.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar el uso de continue para omitir una secuencia de acciones una vez  en un loop 
+                 de acuerdo a una condición. 
+
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>cotinue</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones. 
+
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+
+//continue
+        imprimirTitulo("cotinue")
+        //continue 
+        for (let i = 1; i <= 15; i++) {
+            if (i == 3) { //No imprimirá el tres, no obstante seguira en el ciclo. 
+                imprimirContenido("<br>")
+                continue;
+            }
+        imprimirContenido(i);
+        }
+
+        /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/continue
+            
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+</script>
+================================================================================
+FILE: .\27-shadowing.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 27-shadowing.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar el uso del concepto shadowing. 
+
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>shadowing</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        }
+
+        
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+       
+
+//Shadowing
+            //Hace referencia a que la variable local b que se encuentra dentro de la función probar, tiene el mismo
+            //nombre que la variable global b y esto es válido. 
+        imprimirTitulo("shadowing")
+
+        let a = 15, b = 25, c = 35;
+
+        function probar(a) {
+            let b = 10;
+            imprimirContenido(a); // parameter a
+            imprimirContenido(b); // local variable b
+            imprimirContenido(c); // global variable c
+        }
+
+        imprimirContenido("Resultados de función probar: ")
+        probar(a);        
+        imprimirContenido("Resultados imprimiendo fuera de la función: ")
+        imprimirContenido(a); // -> 15
+        imprimirContenido(b); // -> 25
+        imprimirContenido(c); // -> 35
+
+          /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/Web_Components/Using_shadow_DOM
+            
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+
+</script>
+================================================================================
+FILE: .\28-recursion.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 28-recursion.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar el uso de recusión en las funciones JS. 
+
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>recursión</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones. 
+
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        }
+
+        
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+//Recursion
+       
+        imprimirTitulo("Recursión"); 
+
+        function factorial (n) {
+            
+            return n > 1 ? n * factorial(n - 1) : 1;
+        }
+
+       imprimirContenido(factorial(4)); // -> 720
+
+        /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions
+            
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+</script>
+
+
+================================================================================
+FILE: .\29-funciones_dentro_de_variables.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo:  29-funciones_dentro_de_variables. O
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar como podemos guardar funciones dentro de variables. 
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>funciones dentro de variables</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Defición de funciones. 
+
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+
+//Funciones dentro de variables. 
+        //Cada función en JS es actualmente un objeto Function. 
+        imprimirTitulo("Funciones dentro de variables"); 
+
+        //Utilizando el nombre de una variable como función. 
+        imprimirContenido("Primera función: Asignando una función ya declarada a una variable y utilizando el nombre de esa variable como función. ")
+
+        function mostrarMensaje(mensaje) {
+             imprimirContenido( `Mensaje: ${mensaje} `);
+        }
+        let sm = mostrarMensaje; //Se debe colocar sin paréntesis de lo contrario se activaria la función al cargar el navegador.
+                                    //y no cuando se de clic( en caso de usar botones) o cuando se llame la función.
+
+        sm("Funciona!"); // -> Message: This works!
+        mostrarMensaje("También funciona!")
+
+        imprimirContenido("El tipo de dato de sm es ('let sm ') es : " + typeof sm); // -> function
+        imprimirContenido("<br>")
+
+        //Creando una variable con la clase Function. 
+        imprimirContenido("Segunda función: Creando una variable con la clase Function. ")
+        var multiplicar = new Function("x", "y", "return x * y");
+        imprimirContenido('var multiplicar = new Function("x", "y", "return x * y");')
+        var respuesta = multiplicar(7, 6);
+        imprimirContenido('var respuesta = multiplicar(7, 6);')
+        imprimirContenido(respuesta)
+
+        imprimirContenido("<br>")
+        imprimirContenido("Tercera función: Asignando directamente una función a una variable y utilizando su nombre como función."); 
+
+        //Podemos definir la función directamente en la variable. 
+
+        let suma = function add(a, b) { //Se puede omitir el nombre de la función
+
+            return a + b;
+            
+        }
+
+        //Podemos utilizar el nombre de la variable o la misma función. 
+        imprimirContenido("suma(10, 20) = " + suma(10, 20) ); // -> 30
+
+
+        imprimirContenido("<br>")
+        imprimirContenido("Cuarto: funcion anónima"); 
+        //No tiene nombre 
+        let cuadrado = function (a){
+            return a**2; 
+        }
+        let pruebaCuadrado = cuadrado(3); 
+        imprimirContenido(pruebaCuadrado)
+
+
+        /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions
+
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+</script>
+================================================================================
+FILE: .\31-setTimeout_y_setinterval.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: while.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  22/06/22
+	Versión: 1.0
+	Descripción: Mostrar el uso setTimeOut para retrazar una acción y setInterval, para
+                establecer un intervalo en la que se ejecutará una acción periodicamente. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout and setInterval</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+       /*
+           Nombre de función: imprimirTitulo
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué 
+           Fecha: 01/06/2022
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el título en html. 
+           Descripción: Imprimira en html un título con el formato h2. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+       }
+
+   /*
+           Nombre de la función: imprimirContenido. 
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué
+           Fecha: 01/06/2022
+           Versión: 1.0
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el contenido
+           Descripción: Imprimira en html un título con el formato h3. 
+   */
+
+   function imprimirContenido(mensaje){
+           
+           document.write("<h3>" + mensaje + "</h3>"); 
+       
+       }
+      
+       imprimirTitulo("setInterval & setTimeout")
+
+        
+//setInterval & setTimeout   
+
+    //setTimeout
+       //La función que es el primer argumento se ejecutará cuando se cumplan los milisegundos. 
+    function saludar() {
+        imprimirContenido('Hola. :D');
+    }
+
+    setTimeout(saludar, 1000);
+    imprimirContenido('Espera ahí un momento >:|');
+
+//setInterval
+    //Ejecutará el primer argumento una cantidad periodica de veces de acuerdo con los milisegundos establecidos.
+function mensaje() {
+    imprimirContenido('Te quiero. ');
+}
+
+setInterval(mensaje, 3000, "Mensaje llamado con setInterval");
+
+       /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/API/setTimeout
+            https://developer.mozilla.org/es/docs/Web/API/setInterval
+
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+
+</script>
+================================================================================
+FILE: .\32-arrow_functions.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 32-arrow_functions.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar el uso de las arrow functions () => { }
+
+ 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow functions</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+//Definición de funciones. 
+
+       /*
+           Nombre de función: imprimirTitulo
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué 
+           Fecha: 01/06/2022
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el título en html. 
+           Descripción: Imprimira en html un título con el formato h2. 
+        */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+       }
+
+   /*
+           Nombre de la función: imprimirContenido. 
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué
+           Fecha: 01/06/2022
+           Versión: 1.0
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el contenido
+           Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+           
+           document.write("<h3>" + mensaje + "</h3>"); 
+       
+       }
+
+       /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+
+
+//Arrow functions
+//Son una forma simplificada de funciones, sí es sólo un argumento podemos  omitir los parentesís. 
+
+    /* 
+        Funciones flecha (Introducidas con la versión ES6)
+            Siempre son anónimas. 
+            No pueden ser usadas como constructores y no pueden estar relacionadas con métodos.
+            Los parentesís no son necesarios si la función recibe solo un  argumento. 
+            
+            Ejemplos: 
+                let fun = x => x+7; //llaves y corchetes opcionales  
+
+                let fun = (x) => { Hacer algo  } fun(10);
+
+                let fun = () => { Hacer algo } //Sin parámetros.
+
+                let fun = x => { Hacer algo } // Solo un parámetro. 
+
+
+    */
+    imprimirTitulo("Arrow functions")
+
+    
+
+       //el return se da implicito cuando es una única operación. 
+        let suma = a => a + 100; //no debe llevar llaves en este caso y solo debe llevar una instrucción para poder omitir el return 
+
+    imprimirContenido("El valor para (definición: ' let suma = a => a + 100,  invocación: suma(5) ') resultado : "  + suma(5)); 
+
+
+    let regresarNumero = (a) => { //En estos casos sí pueden llevar más de una instrucción, debe llevar el return.
+           
+          return a + 2
+    }
+
+    imprimirContenido("El valor para (definición'let regresarNumero = (a) => { return a + 2 }, invocación: regresarNumero(10)   ') resultado : "  + regresarNumero(10)); 
+    
+    let add = (a, b) =>a + b;
+    
+
+     imprimirContenido("El valor para (definición: '  let add = (a, b) => { return a + b }', invocación: add(10,20) ) resultado : "  + add(10,20));
+    
+    let division = (a, b) => a / b;
+    imprimirContenido("El valor para (definición : ' let division = (a, b) => a / b;', invocación: division(10,20) ) resultado : "  + division(10,20));
+    
+    
+        /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+    
+    
+    </script>
+================================================================================
+FILE: .\33-reference_error.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 33-reference_error.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar de los reference error cuando intentamos utilizar una variable que no existe.  
+
+ 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reference error</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+
+
+       /*
+           Nombre de función: imprimirTitulo
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué 
+           Fecha: 01/06/2022
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el título en html. 
+           Descripción: Imprimira en html un título con el formato h2. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+       }
+
+   /*
+           Nombre de la función: imprimirContenido. 
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué
+           Fecha: 01/06/2022
+           Versión: 1.0
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el contenido
+           Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+           
+           document.write("<h3>" + mensaje + "</h3>"); 
+       
+       }
+
+       /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+
+    //Reference error. 
+    // cuando intentamos utilizar una variable o función que no existe.
+    //Usualmente cuandro escribimos mal el nombre de estos elementos.   
+    imprimirTitulo("Reference error")
+    imprimirContenido("El valor para   fun(); es:  Uncaught ReferenceError: fun is not defined" ); 
+    imprimirContenido("El valor para let a = b es:  b is not defined" ); 
+    let a = b; // -> Uncaught ReferenceError: b is not defined
+    fun(); 
+
+    
+        /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError
+            
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+</script>
+================================================================================
+FILE: .\34-sintax_error.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 34-sintax_error.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar los errores de sintaxys.  
+
+ 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sintax error</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+       /*
+           Nombre de función: imprimirTitulo
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué 
+           Fecha: 01/06/2022
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el título en html. 
+           Descripción: Imprimira en html un título con el formato h2. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+       }
+
+   /*
+           Nombre de la función: imprimirContenido. 
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué
+           Fecha: 01/06/2022
+           Versión: 1.0
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el contenido
+           Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+           
+           document.write("<h3>" + mensaje + "</h3>"); 
+       
+       }
+
+       /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+
+//Syntax error. 
+       imprimirTitulo("Syntax error"); 
+       imprimirContenido("El valor para let multiply = (a b) => a + b;  es: Uncaught SyntaxError: Unexpected identifier ")
+       imprimirNotas("Nota: Falta la coma en la definición de la función."); 
+    //    let multiplicación = (a b) => a + b; // -> Uncaught SyntaxError: Unexpected identifier
+        //descomentar y ver el debugger para su funcionamiento. 
+        // let resultado = multiplicacion(10, 20);
+        // imprimirContenido(result);
+
+         /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/en-US/docs/Glossary/Syntax_error
+
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+</script>
+================================================================================
+FILE: .\35-try_catch.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 35-try_catch.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar de de try { } catch (e){ } para evitar la interrupción de los programas.  
+
+ 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try catch</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+       /*
+           Nombre de función: imprimirTitulo
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué 
+           Fecha: 01/06/2022
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el título en html. 
+           Descripción: Imprimira en html un título con el formato h2. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+       }
+
+   /*
+           Nombre de la función: imprimirContenido. 
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué
+           Fecha: 01/06/2022
+           Versión: 1.0
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el contenido
+           Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+           
+           document.write("<h3>" + mensaje + "</h3>"); 
+       
+       }
+
+       /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+
+
+   
+
+//try catch
+    //Manejar excepciones. 
+    imprimirTitulo("try{ } catch(e){ }")
+    try {
+        imprimirContenido('abcde'); // -> abc
+        conolee.log('fghi');
+    } catch (e) {  
+        imprimirContenido(e.message); // -> conole is not defined 
+    }
+
+    
+         /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/try...catch
+
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+            
+        */
+
+
+</script>
+================================================================================
+FILE: .\36-isFinite.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 36-isFInite.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar el método  .isFinite para comprobar que el número es finito. 
+
+ 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>isFinite</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+       /*
+           Nombre de función: imprimirTitulo
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué 
+           Fecha: 01/06/2022
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el título en html. 
+           Descripción: Imprimira en html un título con el formato h2. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+       }
+
+   /*
+           Nombre de la función: imprimirContenido. 
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué
+           Fecha: 01/06/2022
+           Versión: 1.0
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el contenido
+           Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+           
+           document.write("<h3>" + mensaje + "</h3>"); 
+       
+       }
+
+       /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+//.isFinite(number)
+    imprimirTitulo("Number.isFinite(numero)"); 
+    let primerNumero = Number(prompt("Ingresa un número"));
+    let segundoNumero = Number(prompt("Ingresa el segundo número:"));
+    
+    
+    //Validación con Number.isFinite(numero).
+    if (Number.isFinite(primerNumero) && Number.isFinite(segundoNumero) && segundoNumero !== 0) {
+        imprimirContenido(primerNumero + "/" + segundoNumero + " = " + (primerNumero / segundoNumero));
+    } else {
+        imprimirContenido("Argumentos incorrectos.");
+    }
+
+
+
+        /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/isFinite
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+
+</script>
+================================================================================
+FILE: .\37-handling_exception.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: while.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar handling exceptions. 
+ 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handling exceptions</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+       /*
+           Nombre de función: imprimirTitulo
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué 
+           Fecha: 01/06/2022
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el título en html. 
+           Descripción: Imprimira en html un título con el formato h2. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+       }
+
+   /*
+           Nombre de la función: imprimirContenido. 
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué
+           Fecha: 01/06/2022
+           Versión: 1.0
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el contenido
+           Descripción: Imprimira en html un título con el formato h3. 
+   */
+    function imprimirContenido(mensaje){
+           
+           document.write("<h3>" + mensaje + "</h3>"); 
+       
+       }
+
+       //Handling exceptions
+       imprimirTitulo("Handling exceptions"); 
+
+        let a = -2;
+        try {
+            a = b;
+        } catch (error) { //We can use diferent types of exceptions. 
+            if (error instanceof ReferenceError) {
+                imprimirContenido("Reference error, reset a to -2"); // -> Reference error, reset a to -2
+                a = -2;
+            } else {
+                imprimirContenido("Other error - " + error);
+            }
+        }
+        
+        /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Control_flow_and_error_handling
+
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+</script>
+================================================================================
+FILE: .\37-type_error.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 37-type_error.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar el uso  de Type
+
+ 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeError</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+       /*
+           Nombre de función: imprimirTitulo
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué 
+           Fecha: 01/06/2022
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el título en html. 
+           Descripción: Imprimira en html un título con el formato h2. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+       }
+
+   /*
+           Nombre de la función: imprimirContenido. 
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué
+           Fecha: 01/06/2022
+           Versión: 1.0
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el contenido
+           Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+           
+           document.write("<h3>" + mensaje + "</h3>"); 
+       
+       }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+    
+//TypeError
+    imprimirTitulo("TypeError"); 
+    const CONSTANTE = 5;
+    imprimirContenido("El valor para CONSTANTE = 7;  es : -> Uncaught TypeError: Assignment to constant variable. ")
+    imprimirContenido("Nota: No se puede cambiar el valor de las constantes")
+    imprimirContenido("El valor para numero.length(); es : Uncaught TypeError: numero.length is not a function")
+    imprimirContenido("No podemos medir la longitud de un valor que no es un string o un array.")
+    CONSTANTE = 7; // -> Uncaught TypeError: Assignment to constant variable.
+    let numero = 10;
+    numero.length(); //-> Uncaught TypeError: numero.length is not a function
+    
+    
+         /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/TypeError
+            
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+
+</script>
+================================================================================
+FILE: .\38-range_error.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 38-range_error.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar de range error al intentar acceder a una posición del arreglo que no existe.
+
+ 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range error</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+       /*
+           Nombre de función: imprimirTitulo
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué 
+           Fecha: 01/06/2022
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el título en html. 
+           Descripción: Imprimira en html un título con el formato h2. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+       }
+
+   /*
+           Nombre de la función: imprimirContenido. 
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué
+           Fecha: 01/06/2022
+           Versión: 1.0
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el contenido
+           Descripción: Imprimira en html un título con el formato h3. 
+   */
+        function imprimirContenido(mensaje){
+           
+           document.write("<h3>" + mensaje + "</h3>"); 
+       
+       }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+
+            document.write("<h4>" + mensaje + "</h4>"); 
+    
+        }
+
+//Range error. 
+        imprimirTitulo("Range error"); 
+        let arreglo = Array(6);
+        imprimirContenido("El contenido para arreglo.length es :  " + arreglo.length); // -> 10
+        //No podemos acceder a la última posición de un arreglo que no existe. 
+        let segundoArreglo = Array(-1); // -> Uncaught RangeError: Invalid array length
+        imprimirContenido("El contenido para segundoArreglo.length es :" + segundoArreglo.length);
+        
+        
+    
+         /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/RangeError
+            
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+       
+</script>
+================================================================================
+FILE: .\39-try_catch_finally.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 39-try_catch_finally.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: try catch finally
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>try { }catch (e){ } finally{ }</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+       /*
+           Nombre de función: imprimirTitulo
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué 
+           Fecha: 01/06/2022
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el título en html. 
+           Descripción: Imprimira en html un título con el formato h2. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+       }
+
+   /*
+           Nombre de la función: imprimirContenido. 
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué
+           Fecha: 01/06/2022
+           Versión: 1.0
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el contenido
+           Descripción: Imprimira en html un título con el formato h3. 
+   */
+        function imprimirContenido(mensaje){
+           
+           document.write("<h3>" + mensaje + "</h3>"); 
+       
+        }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+
+            document.write("<h4>" + mensaje + "</h4>"); 
+
+        }
+//try { }catch (e){ } finally{ }"
+    imprimirTitulo("try { }catch (e){ } finally{ }")
+    imprimirContenido("Siempre se ejecutará el finally independientemente si la operación es correcta o no")
+    imprimirContenido("Declaración  let a = 10 : "); 
+
+    let a = 10;
+    try {
+
+        imprimirContenido("a=b")
+        a = b;  // ReferenceError
+
+    }catch(e){
+        imprimirContenido("No le puedes asignar el valor de la variable b (por que no existe) a la variable a."); 
+    }
+    
+    finally { //Siempre se ejecutará, se encuentre una excepción o no. 
+
+        imprimirContenido("Finalmente el valor de a es:"+a); // -> 10
+
+    }
+
+    
+    
+         /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally
+            
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+</script>
+
+
+================================================================================
+FILE: .\40-throw.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 40-throw
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: throw statement enviará una expción (creada por el programador ) de acuerdo a un 
+                    valor seguido de la declaración ejemplo throw 100; // -> Uncaught 100. 
+
+        
+ 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>throw statement</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+       /*
+           Nombre de función: imprimirTitulo
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué 
+           Fecha: 01/06/2022
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el título en html. 
+           Descripción: Imprimira en html un título con el formato h2. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+       }
+
+   /*
+           Nombre de la función: imprimirContenido. 
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué
+           Fecha: 01/06/2022
+           Versión: 1.0
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el contenido
+           Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+           
+           document.write("<h3>" + mensaje + "</h3>"); 
+       
+       }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+
+            document.write("<h4>" + mensaje + "</h4>"); 
+
+        }
+
+//throw 
+        //Creará una excepción, el programador puede crear la excepción para el tipo de error que desee. 
+       imprimirTitulo("throw new"); 
+       /*
+       imprimirContenido("start"); // -> start
+       imprimirContenido("El valor para (throw 100;) es : Uncaught 100 ")
+       throw 100; // -> Uncaught 100
+       console.log("end");
+       */
+
+       //Aquí el bloque catch tomará la excepción.
+       /*
+       console.log("start"); // -> start
+        try {
+            throw 100;
+        } catch (error) {
+            console.log(error); // -> 100
+        }
+        console.log("end"); // -> end
+        */
+
+
+
+       //Creando una nueva excepción sí se excede el valor. 
+
+       function factorial(n) {
+        if (n > 30) {
+            throw new RangeError("Valor máximo 30");
+        }
+        let result = 1;
+        for (; n > 1; n--) {
+            result = result * n;
+        }
+        return result;
+        }
+
+        imprimirContenido(factorial(6)); // -> 2432902008176640000
+        imprimirContenido("El valor para (factorial(1000)) es : Uncaught RangeError:Valor máximo 30 ")
+        imprimirContenido(factorial(1000)); // -> Uncaught RangeError: Max value 20
+
+        
+
+
+    
+         /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/throw
+
+            
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+</script>
+================================================================================
+FILE: .\41-debugger.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 41-debugger.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Debugger permite ejecutar las instrucciones paso a paso
+                 esto nos permite ver si hay errores en alguna línea del código. 
+ 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debugger</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+       /*
+           Nombre de función: imprimirTitulo
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué 
+           Fecha: 01/06/2022
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el título en html. 
+           Descripción: Imprimira en html un título con el formato h2. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+       }
+
+   /*
+           Nombre de la función: imprimirContenido. 
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué
+           Fecha: 01/06/2022
+           Versión: 1.0
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el contenido
+           Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+           
+           document.write("<h3>" + mensaje + "</h3>"); 
+       
+       }
+       
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+
+            document.write("<h4>" + mensaje + "</h4>"); 
+
+        }
+
+//debugger; 
+        //Debugger permite ejecutar las instrucciones paso a paso, pausar o reiniciar. 
+    imprimirContenido("Before debugger");
+    debugger; //Disponible en algunas de las versiones más recientes de los navegadores. 
+    imprimirContenido("After debugger");    
+
+    
+         /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/debugger
+
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+</script>
+
+
+================================================================================
+FILE: .\42-time_timeEnd.html
+================================================================================
+<!-- 
+
+    Nombre del programa archivo: 42-time_timeEnd.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: console.time-> we indicate where to start the time measurement 
+                 console.timeEnd->we end the measurement
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>time and timeEnd</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+       /*
+           Nombre de función: imprimirTitulo
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué 
+           Fecha: 01/06/2022
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el título en html. 
+           Descripción: Imprimira en html un título con el formato h2. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+       }
+
+   /*
+           Nombre de la función: imprimirContenido. 
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué
+           Fecha: 01/06/2022
+           Versión: 1.0
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el contenido
+           Descripción: Imprimira en html un título con el formato h3. 
+   */
+     function imprimirContenido(mensaje){
+           
+           document.write("<h3>" + mensaje + "</h3>"); 
+       
+       }
+
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+
+            document.write("<h4>" + mensaje + "</h4>"); 
+
+        }
+
+
+//time(label) & timeEnd(label)
+
+       imprimirTitulo("time & timeEnd"); 
+       imprimirContenido("Revisar la consola en el navegador para ver los métodos. "); 
+       imprimirNotas("Nota:Se utiliza para medir en cuanto tiempo se")
+        let part = 0;
+
+        //console.time-> we indicate where to start the time measurement. 
+        console.time('Leibniz');
+
+        for (let k = 0; k < 10000000; k++) {
+            part = part + ((-1) ** k) / (2 * k + 1);
+        }
+
+        console.timeEnd('Leibniz'); //console.timeEnd->we end the measurement. 
+        
+        let pi = part * 4;
+
+        console.log(pi); // -> 3.1415925535897915
+
+         /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/API/Console/timeEnd
+
+
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+</script>
